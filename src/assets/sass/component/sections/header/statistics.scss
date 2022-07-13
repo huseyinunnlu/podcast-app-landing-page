@@ -1,0 +1,35 @@
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+
+  .statistic-card {
+    @include flex-column;
+    background: #fff;
+    border: 1.5px solid #000000;
+    box-shadow: 6px 6px 0px #cd4631;
+    border-radius: 8px;
+    padding: 60px;
+
+    .statistic-title {
+      @include h1;
+      color: $vermililion;
+      margin-bottom: 20px;
+
+      span {
+        @include h1;
+        margin-left: -20px;
+        color: $black;
+      }
+    }
+
+    .statistic-type {
+      color: $gray;
+    }
+  }
+}

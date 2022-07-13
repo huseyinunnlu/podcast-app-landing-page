@@ -1,0 +1,62 @@
+.features {
+  padding: 140px 0;
+  @include flex-column;
+
+  .title {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 100px;
+    &-main {
+      @include h2;
+      margin-bottom: 20px;
+    }
+
+    &-small {
+      @include h3;
+      color: $gray;
+    }
+  }
+
+  .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    @media screen and (max-width: 700px) {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+    gap: 80px 20px;
+    margin-bottom: 100px;
+
+    .feature-card-item {
+      @include flex-column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      img {
+        max-width: 78px;
+        height: 78px;
+      }
+
+      h3 {
+        @include h3-bold;
+        margin: 30px 10px;
+      }
+    }
+  }
+
+  .see-pricing {
+    background: #000000;
+    color: #fff;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    align-self: center;
+    width: auto;
+    border-radius: 8px;
+    padding: 20px 36px;
+    &:hover {
+      background: #fff;
+      color: #000000;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.episode-cards {
+  display: grid;
+  margin-bottom: 120px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+  gap: 20px;
+
+  .episode-card-item {
+    padding: 16px;
+
+    border-radius: 12px;
+    border: 2px solid #000000;
+    background: #fff;
+    &:nth-child(3n),
+    &:nth-child(2) {
+      .title-main {
+        color: #000 !important;
+      }
+    }
+    &:nth-child(1),
+    &:nth-child(4),
+    &:nth-child(5) {
+      box-shadow: 10px 10px 0px #81adc8;
+    }
+    .card-header {
+      @include flex;
+
+      @media screen and (max-width: 500px) {
+        flex-wrap: wrap;
+      }
+
+      .card-banner {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 8px;
+      }
+
+      .card-main {
+        @include flex-column;
+
+        margin: 17px 0 17px 20px;
+        .card-title {
+          @include flex-column;
+          * {
+            color: $vermililion;
+          }
+          .title-small {
+            @include body-bold;
+          }
+
+          .title-main {
+            @include h3;
+            margin-top: 4px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid $gray;
+          }
+        }
+        .card-desc {
+          @include caption;
+          p {
+            color: $gray !important;
+          }
+        }
+      }
+    }
+    .card-footer {
+      @include flex;
+      margin-top: 20px;
+      .tags {
+        @include flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
+        .tag {
+          padding: 6px 12px;
+          @include small;
+          border: 1px solid $gray;
+
+          border-radius: 4px;
+        }
+      }
+
+      .hosted-users {
+        margin-left: auto;
+        @include flex;
+        align-items: center;
+        gap: 10px;
+        span {
+          @include small-bold;
+        }
+
+        .users {
+          @include flex;
+          align-items: center;
+          img {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+
+            &:not(:first-child) {
+              width: 30px;
+              height: 30px;
+              border: 2px solid #fff;
+              transform: translateX(-6px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.recent-episodes {
+  padding: 140px 0;
+  background-color: $champagne;
+  @include flex-column;
+
+  .browse-all {
+    text-align: center;
+    a {
+      background: #000000;
+      color: #fff;
+      box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+      padding: 20px 36px;
+      border-radius: 8px;
+      &:hover {
+        background: #fff;
+        color: #000000;
+      }
+    }
+  }
+}

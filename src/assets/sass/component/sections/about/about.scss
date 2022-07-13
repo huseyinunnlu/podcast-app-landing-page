@@ -1,0 +1,68 @@
+.about {
+  margin: 140px auto 0px auto;
+  @include flex-column;
+  justify-content: center;
+
+  &-title {
+    text-align: center;
+    @include h1;
+    margin-bottom: 100px;
+  }
+
+  .questions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    @media screen and (max-width: 700px) {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+    align-items: center;
+    text-align: center;
+    gap: 216px;
+    margin-bottom: 120px;
+
+    .question-card {
+      @include flex-column;
+      justify-content: center;
+      img {
+        align-self: center;
+        max-width: 275px;
+        height: 275px;
+      }
+    }
+  }
+
+  .quote {
+    background-color: $champagne;
+    margin-bottom: 140px;
+    padding: 40px 0;
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+
+    &-text {
+      @include h2;
+      margin: 40px 10px;
+      text-align: center;
+      max-width: 700px;
+    }
+
+    &-user {
+      @include flex;
+      align-items: center;
+      gap: 10px;
+      &-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+      }
+
+      .full-name {
+        @include caption;
+      }
+
+      .job {
+        @include caption-bold;
+      }
+    }
+  }
+}

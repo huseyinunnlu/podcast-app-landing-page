@@ -1,0 +1,92 @@
+@mixin heading {
+  font-size: $head;
+  line-height: 100%;
+  letter-spacing: -4%;
+  font-weight: map-get($font-weights, "bold");
+}
+
+@mixin h1 {
+  font-size: $h1;
+  line-height: 100% / 140%;
+  letter-spacing: -2%;
+  font-weight: map-get($font-weights, "bold");
+}
+
+@mixin h2 {
+  font-size: $h2;
+  line-height: 100% / 140%;
+  letter-spacing: -2%;
+  font-weight: map-get($font-weights, "bold");
+}
+
+@mixin h2-extended {
+  @include h2;
+  line-height: 140%;
+}
+
+@mixin h3 {
+  font-size: $h3;
+  line-height: 160%;
+  letter-spacing: 0%;
+}
+
+@mixin h3-bold {
+  font-size: $h3;
+  line-height: 140%;
+  letter-spacing: 0%;
+  font-weight: map-get($font-weights, "bold");
+}
+
+@mixin body {
+  font-size: $body;
+  line-height: 160%;
+}
+
+@mixin body-bold {
+  @include body;
+  font-weight: map-get($font-weights, "bold");
+}
+
+@mixin caption {
+  font-size: $caption;
+  line-height: 160%;
+}
+
+@mixin caption-bold {
+  @include caption;
+  font-weight: map-get($font-weights, "bold");
+}
+
+@mixin small {
+  font-size: $small;
+  line-height: 160%;
+}
+
+@mixin small-bold {
+  @include small;
+  font-weight: map-get($font-weights, "bold");
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-column {
+  @include flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  @include flex;
+  justify-content: center;
+}
+
+@mixin flex-around {
+  @include flex;
+  justify-content: space-around;
+}
+
+@mixin flex-between {
+  @include flex;
+  justify-content: space-between;
+}

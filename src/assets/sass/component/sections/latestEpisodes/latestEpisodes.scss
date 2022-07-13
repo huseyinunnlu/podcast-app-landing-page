@@ -1,0 +1,24 @@
+.latest-episodes {
+  padding: 140px 0;
+  @include flex-column;
+  .filter {
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+    border-bottom: 2px solid $gray;
+
+    &-list {
+      @include flex;
+      justify-content: space-between;
+      color: $gray;
+
+      .active,
+      &-item:hover {
+        color: $vermililion;
+      }
+      &-item {
+        @include body-bold;
+        transition: color 300ms;
+      }
+    }
+  }
+}

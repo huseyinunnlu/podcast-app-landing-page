@@ -1,0 +1,52 @@
+.contact {
+  padding: 140px 0;
+  background-color: #fff;
+
+  .title {
+    margin-bottom: 60px;
+  }
+  &-form {
+    border-top: 1px solid lightgray;
+    padding-top: 40px;
+  }
+
+  .form-footer {
+    @include flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    .required {
+      @include caption-bold;
+
+      &::before {
+        content: "*";
+        color: $vermililion;
+        font-size: $small;
+        margin-right: 3px;
+      }
+    }
+
+    .send-message-button {
+      background: #000000;
+      color: #fff;
+      box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+      padding: 20px 36px;
+      border-radius: 8px;
+      &:hover {
+        background: #fff;
+        color: #000000;
+      }
+    }
+
+    .right-message {
+      @include caption;
+
+      a {
+        @include caption;
+        text-decoration: underline;
+        color: $vermililion;
+      }
+    }
+  }
+}

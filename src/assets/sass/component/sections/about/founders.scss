@@ -1,0 +1,96 @@
+@mixin background-style {
+  background-size: 130px;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+}
+
+.founders {
+  padding: 100px 20px 140px 20px;
+  @include flex-column;
+  .title {
+    @include h2;
+  }
+  .founder-cards {
+    @include flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px 20px;
+
+    .founder-card-item {
+      @include flex;
+      &:nth-child(odd) {
+        background: url("@/assets/media/icons/face-1.svg");
+        @include background-style;
+      }
+
+      &:nth-child(even) {
+        background: url("@/assets/media/icons/star.svg");
+        @include background-style;
+      }
+      border: 2px solid #000000;
+      box-shadow: 10px 10px 0px #000000;
+      border-radius: 8px;
+      flex: 1 1 240px;
+      padding: 16px;
+      gap: 20px;
+
+      @media screen and(max-width: 1000px) {
+        & {
+          @include flex-column;
+
+          .founder-card-avatar {
+            height: 300px;
+          }
+        }
+      }
+      .founder-card-avatar  {
+        max-width: 260px;
+        max-height: 480px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .founder-card-information {
+        @include flex-column;
+        margin-top: auto;
+        gap: 20px;
+        .founder-card-title {
+          @include flex-column;
+          gap: 6px;
+          .founder-role {
+            color: gray;
+            @include caption;
+          }
+          .founder-full-name {
+            @include h2;
+          }
+        }
+      }
+
+      .description {
+        @include caption;
+        color: $gray;
+        border-bottom: 1px solid $gray;
+        padding-bottom: 15px;
+      }
+
+      .social-media {
+        @include flex;
+        align-items: center;
+        padding: 0px 0px 10px 0px;
+
+        margin-left: auto;
+        gap: 5px;
+        span {
+          @include small-bold;
+        }
+
+        img {
+          max-width: 20px;
+          max-height: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.row {
+  @include flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .col-md-6 {
+    flex: 1 1 370px;
+  }
+
+  .col-sm-12 {
+    flex: 1 1 100%;
+  }
+}

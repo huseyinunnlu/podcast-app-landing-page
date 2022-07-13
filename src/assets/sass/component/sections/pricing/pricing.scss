@@ -1,0 +1,113 @@
+.pricing {
+  margin: 140px auto;
+
+  &-cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    @media screen and (max-width: 500px) {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+    .pricing-card {
+      @include flex-column;
+      gap: 20px;
+
+      &-child {
+        &:nth-child(1) {
+          margin-bottom: 20px;
+          padding: 60px 40px 30px 40px;
+          min-height: 300px;
+          .card-header {
+            @include flex-column;
+
+            .card-title {
+              @include flex;
+              flex-wrap: wrap;
+              align-items: center;
+              margin-bottom: 20px;
+
+              &-main {
+                @include h2;
+              }
+              .most-popular {
+                @include small-bold;
+                margin-left: auto;
+                text-transform: uppercase;
+                background: $vermililion;
+                color: #fff;
+                border-radius: 4px;
+                padding: 3px 6px;
+                text-align: center;
+              }
+            }
+
+            .card-title-small {
+              @include caption;
+              color: $gray;
+              margin-bottom: 90px;
+            }
+          }
+
+          .card-footer {
+            margin-top: auto;
+            @include flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            .subscribe-button {
+              background: #000000;
+              color: #fff;
+              box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+              padding: 20px 36px;
+              border-radius: 8px;
+              &:hover {
+                background: #fff;
+                color: #000000;
+              }
+            }
+
+            .price {
+              margin-left: auto;
+              @include flex-column;
+
+              span:nth-child(1) {
+                @include h3-bold;
+                color: $vermililion;
+              }
+              span:nth-child(2) {
+                @include small;
+                color: $gray;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          padding: 40px;
+          .benefit-title {
+            @include caption-bold;
+            color: $gray;
+            margin-bottom: 20px;
+          }
+
+          .benefit-list {
+            @include flex-column;
+            gap: 10px;
+            margin: 20px;
+            li {
+              list-style: disc !important;
+            }
+          }
+        }
+
+        border: 1px solid #000;
+        border-radius: 8px;
+      }
+    }
+
+    .popular {
+      .pricing-card-child {
+        background: $champagne;
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.footer {
+  padding: 140px 0 80px 0;
+  @include flex-column;
+
+  &-big {
+    display: grid;
+    gap: 30px;
+    padding: 0px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    margin-bottom: 140px;
+    @media screen and (max-width: 500px) {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+
+    .footer-column {
+      @include flex-column;
+
+      .footer-icons {
+        @include flex;
+        gap: 23px;
+      }
+    }
+
+    .logo {
+      gap: 40px;
+      .footer-logo {
+        @include flex;
+
+        align-items: flex-end;
+        img {
+          width: 75px;
+          height: 75px;
+        }
+        span {
+          @include small;
+          color: $gray;
+          margin-left: 24px;
+        }
+      }
+      .footer-text {
+        @include caption;
+
+        color: $gray;
+      }
+
+      .footer-icons {
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .menu {
+      .footer-menu {
+        @include flex-column;
+        gap: 20px 0;
+
+        &-item {
+          transition: 300ms color;
+
+          &:hover,
+          .active {
+            color: $vermililion;
+          }
+        }
+      }
+    }
+
+    .platforms {
+      @include flex-column;
+      gap: 60px;
+      .footer-platforms {
+        @include flex-column;
+        gap: 20px;
+        .platform-text {
+          color: $gray;
+        }
+
+        .footer-icons {
+          @include flex;
+          flex-wrap: wrap;
+          img {
+            height: 22px;
+          }
+        }
+      }
+
+      .footer-aviable-stores {
+        @include flex-column;
+
+        .aviable-store-text {
+          color: $gray;
+        }
+        gap: 20px 0;
+      }
+    }
+  }
+
+  &-small {
+    @include flex;
+
+    padding-top: 20px;
+    align-items: center;
+    border-top: 1px solid $gray;
+    * {
+      @include small;
+    }
+    .copyright-text {
+      a {
+        color: $vermililion;
+      }
+    }
+    .terms {
+      margin-left: auto;
+
+      a:nth-child(1)::after {
+        @include body;
+        content: "•";
+        margin: 0px 10px;
+      }
+    }
+  }
+}

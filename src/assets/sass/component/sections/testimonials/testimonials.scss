@@ -1,0 +1,44 @@
+.testimonials {
+  background: $alice-blue;
+  padding: 140px 0 100px 0;
+  @include flex-column;
+
+  .testimonial-slider {
+    @include flex;
+    margin: 80px 0 100px 0;
+    align-items: center;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      width: 0; /* Remove scrollbar space */
+      background: transparent; /* Optional: just make scrollbar invisible */
+    }
+    gap: 20px;
+
+    .testimonial-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 40px;
+      min-width: 570px;
+
+      @media (max-width: 1300px) {
+        min-width: 500px;
+        height: 70%;
+      }
+      @media (max-width: 500px) {
+        min-width: 450px;
+        height: 50%;
+      }
+
+      &-text {
+        @include h3;
+        margin: 36px 0 32px 0;
+      }
+
+      &-user {
+        @include flex;
+        gap: 10px;
+        align-items: center;
+      }
+    }
+  }
+}

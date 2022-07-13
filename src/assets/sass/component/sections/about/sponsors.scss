@@ -1,0 +1,36 @@
+.sponsors {
+  padding: 140px 0 80px 0;
+  background-color: $champagne;
+
+  .sponsor-cards {
+    @include flex;
+    gap: 20px;
+    overflow-y: auto;
+    width: 100%;
+
+    .sponsor-card {
+      @include flex-column;
+      min-width: 470px;
+      max-width: 570px;
+
+      padding: 35px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1.5px solid #000;
+      &-img {
+        width: 300px;
+        height: auto;
+        padding-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+      }
+      &-description {
+        color: $gray;
+        @include caption;
+      }
+    }
+  }
+}
